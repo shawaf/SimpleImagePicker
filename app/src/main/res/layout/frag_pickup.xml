@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical">
+
+    <!--<FrameLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="0dp"-->
+        <!--android:visibility="gone"-->
+        <!--android:layout_weight="1">-->
+
+        <!--<ImageView-->
+            <!--android:id="@+id/pickup_selected_image_iv"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:scaleType="centerInside"-->
+            <!--android:src="@drawable/logo" />-->
+
+        <!--<LinearLayout-->
+            <!--android:id="@+id/pickup_multiple_images_lay"-->
+            <!--android:layout_width="150dp"-->
+            <!--android:layout_height="40dp"-->
+            <!--android:layout_gravity="bottom"-->
+            <!--android:layout_margin="10dp"-->
+            <!--android:background="@drawable/muliple_images_bg"-->
+            <!--android:gravity="center_vertical"-->
+            <!--android:orientation="horizontal">-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="24dp"-->
+                <!--android:layout_height="24dp"-->
+                <!--android:layout_marginLeft="10dp"-->
+                <!--android:layout_marginRight="6dp"-->
+                <!--android:scaleType="centerCrop"-->
+                <!--android:src="@drawable/multiple_image" />-->
+
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginRight="10dp"-->
+                <!--android:fontFamily="@font/notosans_reg"-->
+                <!--android:text="Multiple Images"-->
+                <!--android:textColor="@color/white"-->
+                <!--android:textSize="@dimen/fontSizeMediumSmall" />-->
+        <!--</LinearLayout>-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/pickup_selected_count_tv"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="30dp"-->
+            <!--android:layout_gravity="bottom|right"-->
+            <!--android:layout_marginBottom="16dp"-->
+            <!--android:layout_marginRight="16dp"-->
+            <!--android:background="@drawable/checkbox_checked_circle"-->
+            <!--android:gravity="center"-->
+            <!--android:minWidth="30dp"-->
+            <!--android:text="10"-->
+            <!--android:textColor="@color/white"-->
+            <!--android:visibility="gone"-->
+            <!--android:textSize="@dimen/fontSizeMedium"-->
+
+            <!--/>-->
+
+    <!--</FrameLayout>-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/gallery_pickup_rv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="4dp"></android.support.v7.widget.RecyclerView>
+    </LinearLayout>
+
+
+</LinearLayout>

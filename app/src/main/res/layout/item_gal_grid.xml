@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/gal_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:minHeight="70dp"
+        android:minWidth="70dp"
+        android:scaleType="centerCrop" />
+
+    <FrameLayout
+        android:id="@+id/item_gal_grid_chick_lay"
+        android:layout_width="wrap_content"
+        android:layout_gravity="right"
+        android:layout_margin="10dp"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:checked="true"
+            android:clickable="false"
+            android:src="@drawable/checkbox_empty_circle" />
+
+        <ImageView
+            android:id="@+id/item_gal_grid_chick_iv"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_gravity="center"
+            android:src="@drawable/check"
+            android:visibility="gone" />
+    </FrameLayout>
+</FrameLayout>
