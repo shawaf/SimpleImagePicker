@@ -1,4 +1,4 @@
-package sa.waqood.hakeem.ui.pickup_images
+package com.elshawaf.simpleimagepicker.pickup_images
 
 import android.app.Activity
 import android.os.Build

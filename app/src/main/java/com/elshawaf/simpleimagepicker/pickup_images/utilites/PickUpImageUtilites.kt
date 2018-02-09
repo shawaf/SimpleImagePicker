@@ -1,7 +1,14 @@
 package sa.waqood.hakeem.ui.pickup_images
 
+import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import android.support.v4.app.Fragment
+import com.elshawaf.simpleimagepicker.pickup_images.PickUpImagesActivity
+import com.elshawaf.simpleimagepicker.pickup_images.utilites.CommonMethods
+import android.content.pm.PackageManager
+import android.support.v4.content.PermissionChecker.checkCallingOrSelfPermission
+
 
 /**
  * Created by mohamedelshawaf on 1/15/18.
@@ -9,47 +16,27 @@ import android.support.v4.app.Fragment
 class PickUpImageUtilites {
 
     companion object {
-        //Getting Image From Device
-        val singleImage: Int = 0
-        val multipleImage: Int = 1
-        fun chooseProfilePicImage(fragment: Fragment, resultCode: Int, selectType: Int) {
-            if (CommonMethods.shouldAskPermission()) {
+        fun chooseProfilePicImage(activity: Activity, requestCode: Int, resultCode: Int) {
+            if (CommonMethods.shouldAskPermission() && !checkWriteExternalPermission(activity)) {
                 val permissions = arrayOf("android.permission.WRITE_EXTERNAL_STORAGE", "android.permission.READ_EXTERNAL_STORAGE")
-                fragment.requestPermissions(permissions, 200)
+                activity.requestPermissions(permissions, requestCode)
             } else {
-//                if (selectType == singleImage)
-//                    dispatchSingleImageFromGalleryIntent(fragment, resultCode)
-//                else
-//                    dispatchMultipleImageFromGalleryIntent(fragment, resultCode)
-                dispatchSingleImageFromCustomPickup(fragment, resultCode)
+                dispatchSingleImageFromCustomPickup(activity, resultCode)
             }
         }
 
-        //Pick image from device
-        fun dispatchSingleImageFromGalleryIntent(fragment: Fragment, resultCode: Int) {
-            val intent = Intent().apply {
-                type = "image/*"
-                action = Intent.ACTION_GET_CONTENT
-            }
-            fragment.startActivityForResult(Intent.createChooser(intent, "Select Image"), resultCode)
+
+        fun dispatchSingleImageFromCustomPickup(activity: Activity, resultCode: Int) {
+            activity.startActivityForResult(Intent(activity, PickUpImagesActivity::class.java), resultCode)
         }
 
-        fun dispatchSingleImageFromCustomPickup(fragment: Fragment, resultCode: Int) {
-            val intent = Intent().apply {
-                type = "image/*"
-                action = Intent.ACTION_GET_CONTENT
-            }
-            fragment.startActivityForResult(Intent(fragment.activity, PickUpImagesActivity::class.java), resultCode)
-        }
 
-        //Pick multiple image from device
-        fun dispatchMultipleImageFromGalleryIntent(fragment: Fragment, resultCode: Int) {
-            val intent = Intent().apply {
-                type = "image/*"
-                action = Intent.ACTION_GET_CONTENT
-                putExtra(Intent.EXTRA_ALLOW_MULTIPLE,true)
-            }
-            fragment.startActivityForResult(Intent.createChooser(intent, "Select Image"), resultCode)
+        private fun checkWriteExternalPermission(activity: Activity): Boolean {
+            val writePermission = android.Manifest.permission.WRITE_EXTERNAL_STORAGE
+            val readPermission = android.Manifest.permission.READ_EXTERNAL_STORAGE
+            val writePermissionStatus = activity.checkCallingOrSelfPermission(writePermission)
+            val readPermissionStatus = activity.checkCallingOrSelfPermission(readPermission)
+            return (writePermissionStatus == PackageManager.PERMISSION_GRANTED && readPermissionStatus == PackageManager.PERMISSION_GRANTED)
         }
     }
 

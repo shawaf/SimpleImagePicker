@@ -8,9 +8,9 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import com.bumptech.glide.Glide
 import com.elshawaf.simpleimagepicker.R
+import com.elshawaf.simpleimagepicker.pickup_images.PickUpImagesActivity
 import com.elshawaf.simpleimagepicker.pickup_images.utilites.CommonMethods
 import kotlinx.android.synthetic.main.item_gal_grid.view.*
-import sa.waqood.hakeem.ui.pickup_images.PickUpImagesActivity
 import java.util.*
 
 /**

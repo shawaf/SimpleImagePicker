@@ -1,4 +1,4 @@
-package sa.waqood.hakeem.ui.pickup_images
+package com.elshawaf.simpleimagepicker.pickup_images
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
@@ -36,11 +36,10 @@ class PickUpImagesFragment : Fragment() {
         initUI()
         initGalleryGridRV()
         fillImages()
-        mainActivity!!.setUpToolbar()
     }
 
     private fun initUI() {
-       // pickup_multiple_images_lay.setOnClickListener { activeMultipleChoise() }
+        // pickup_multiple_images_lay.setOnClickListener { activeMultipleChoise() }
     }
 
     private fun initGalleryGridRV() {
