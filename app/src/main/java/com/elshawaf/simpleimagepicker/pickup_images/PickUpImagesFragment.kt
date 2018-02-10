@@ -3,6 +3,7 @@ package com.elshawaf.simpleimagepicker.pickup_images
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.GridLayoutManager
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -50,7 +51,8 @@ class PickUpImagesFragment : Fragment() {
     }
 
     private fun fillImages() {
-        val imgPaths = GalleryUtilites.getAllImages(activity)
+        val imagesData = GalleryUtilites.getAllImages(activity)
+        val imgPaths = getImagesPathsArr(imagesData)
         galGridAdapter = GalGridAdapter(activity, imgPaths)
         gallery_pickup_rv.adapter = galGridAdapter
     }
@@ -99,5 +101,22 @@ class PickUpImagesFragment : Fragment() {
         }
     }
 
+    private fun getImagesPathsArr(imagesData: HashMap<String, String>): ArrayList<String> {
+        var impPaths = ArrayList<String>()
+        imagesData.forEach { if (it.value.equals("Instagram")) impPaths.add(it.key) }
+        getImagesFolderArr(imagesData)
+        return impPaths
+    }
+
+    private fun getImagesFolderArr(imagesData: HashMap<String, String>): ArrayList<String> {
+        var impFolders = ArrayList<String>()
+        imagesData.forEach {
+            if (!impFolders.contains(it.value)) {
+                impFolders.add(it.value)
+                Log.e("PickupImageFrag", "Folder : " + it.value)
+            }
+        }
+        return impFolders
+    }
 
 }

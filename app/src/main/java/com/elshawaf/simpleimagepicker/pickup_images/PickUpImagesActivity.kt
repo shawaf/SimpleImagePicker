@@ -44,16 +44,16 @@ class PickUpImagesActivity : AppCompatActivity() {
         toolbar_right_btn_icon_iv.setOnClickListener { checkSelectedImages() }
     }
 
-    private fun setUpStatusBar() {
-        window.addFlags(WindowManager.LayoutParams.FLAG_FORCE_NOT_FULLSCREEN)
-        window.clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN)
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            val window = window
-            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
-            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
-            window.statusBarColor = ContextCompat.getColor(this, R.color.light_grey)
-        }
-    }
+//    private fun setUpStatusBar() {
+//        window.addFlags(WindowManager.LayoutParams.FLAG_FORCE_NOT_FULLSCREEN)
+//        window.clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN)
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+//            val window = window
+//            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
+//            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
+//            window.statusBarColor = ContextCompat.getColor(this, R.color.light_grey)
+//        }
+//    }
 
     fun setUpToolbar() {
         currentFragment = pickUpFragmentTag
