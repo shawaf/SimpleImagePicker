@@ -9,5 +9,11 @@
     </style>
 
 
+    <style name="Animation">
+        <!--<item name="android:windowEnterAnimation">@anim/popup_show</item>-->
+        <!--<item name="android:windowExitAnimation">@anim/popup_hide</item>-->
+    </style>
+
+
 
 </resources>

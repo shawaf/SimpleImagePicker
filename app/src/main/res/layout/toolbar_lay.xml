@@ -15,21 +15,21 @@
 
         <ImageView
             android:id="@+id/toolbar_back_iv"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:visibility="visible"
             android:layout_marginRight="20dp"
-            android:src="@drawable/back_icon" />
+            android:src="@drawable/action_close_icon" />
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/toolbar_title_lay"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="4"
         android:gravity="center">
 
         <LinearLayout
-            android:id="@+id/toolbar_title_lay"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -41,11 +41,21 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/notosans_reg"
-                android:textColor="@color/black"
+                android:textColor="@color/dark_grey"
                 android:singleLine="true"
+                android:text="@string/gallery"
                 android:maxLines="1"
                 android:textSize="20sp"
                 android:visibility="visible" />
+
+            <ImageView
+                android:id="@+id/toolbar_title_expand_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/action_expand_icon"
+                />
+
+
         </LinearLayout>
 
     </LinearLayout>
@@ -57,7 +67,7 @@
         android:gravity="center"
         android:orientation="horizontal">
 
-        <LinearLayout
+        <FrameLayout
             android:id="@+id/toolbar_right_btn_icon_lay"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -69,12 +79,29 @@
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:visibility="visible"
+                android:layout_gravity="center"
                 android:clickable="false"
                 android:focusable="false"
-                android:src="@drawable/ic_done_black_24dp"
+                android:src="@drawable/action_done_icon"
                 android:tint="@color/dark_grey"
                 />
-        </LinearLayout>
+
+            <TextView
+                android:id="@+id/toolbar_selection_count_tv"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:background="@drawable/count_circle_bg"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="6dp"
+                android:textColor="@color/white"
+                android:text="10"
+                android:visibility="gone"
+                android:textSize="@dimen/fontSizeMediumSmall"
+                android:gravity="center"
+                />
+
+        </FrameLayout>
 
 
     </LinearLayout>

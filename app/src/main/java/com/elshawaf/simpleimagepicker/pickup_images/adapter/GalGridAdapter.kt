@@ -16,7 +16,7 @@ import java.util.*
 /**
  * Created by Shawaf on 7/14/2016.
  */
-class GalGridAdapter(context: Activity, private val imgPaths: List<String>) : RecyclerView.Adapter<GalGridAdapter.HomeGridViewHolders>() {
+class GalGridAdapter(context: Activity, private var imgPaths: List<String>) : RecyclerView.Adapter<GalGridAdapter.HomeGridViewHolders>() {
     private val context: PickUpImagesActivity
     private val selectedPositions = ArrayList<Int>()
     private var isMultipleChoise = false
@@ -102,5 +102,11 @@ class GalGridAdapter(context: Activity, private val imgPaths: List<String>) : Re
         selectedPositions.clear()
         context.clearSelectedImages()
     }
+
+    fun updatesList(newImagesPathsList: List<String>){
+        this.imgPaths=newImagesPathsList
+        notifyDataSetChanged()
+    }
+
 
 }

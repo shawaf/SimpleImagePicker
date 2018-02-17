@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorPrimary">#DAD9DB</color>
+    <color name="colorPrimaryDark">#747d78</color>
+    <color name="colorAccent">#747d78</color>
 
 
     <color name="grey">#DAD9DB</color>
@@ -12,5 +12,7 @@
     <color name="app_off_white">#f7f7f7</color>
     <color name="dark_grey">#747d78</color>
     <color name="transparent">#00000000</color>
+
+    <color name="choise_color">#43C7B1</color>
 
 </resources>

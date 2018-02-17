@@ -54,6 +54,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+
     fun getSelectedGalleryModelsAsString(selectedIDImages: List<GalleryModel>): String {
         val gson = Gson()
         return gson.toJson(selectedIDImages)
@@ -63,7 +64,6 @@ class MainActivity : AppCompatActivity() {
         val gson = Gson()
         val type = object : TypeToken<List<GalleryModel>>() {}.type
         return gson.fromJson(selectedImagesString, type)
-
     }
 
 }

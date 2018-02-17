@@ -47,11 +47,32 @@ object GalleryUtilites {
             val dataColumnIndex = cursor.getColumnIndex(MediaStore.Images.Media.DATA)
             val bucketColumnIndex = cursor.getColumnIndex(MediaStore.Images.Media.BUCKET_DISPLAY_NAME)
             //Store the path of the image
-            arrPaths.put(cursor.getString(dataColumnIndex),cursor.getString(bucketColumnIndex))
+            arrPaths.put(cursor.getString(dataColumnIndex), cursor.getString(bucketColumnIndex))
 
         }
 
         return arrPaths
+    }
+
+    fun getImagesPathsArr(imagesData: HashMap<String, String>, selectedFolder: String): ArrayList<String> {
+
+        var imgPaths = ArrayList<String>()
+        imagesData.forEach {
+            if (selectedFolder.equals("All")) imgPaths.add(it.key)
+            else if (it.value.equals(selectedFolder)) imgPaths.add(it.key)
+        }
+        Log.e(this.javaClass.name,"Selected Folder : $selectedFolder "+" || Images Count : "+imgPaths.size)
+        return imgPaths
+    }
+
+    fun getImagesFolderArr(imagesData: HashMap<String, String>): ArrayList<String> {
+        var impFolders = ArrayList<String>()
+        imagesData.forEach {
+            if (!impFolders.contains(it.value) && !it.value.startsWith("IMG", false)) {
+                impFolders.add(it.value)
+            }
+        }
+        return impFolders
     }
 
 }
